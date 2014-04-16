@@ -1,0 +1,86 @@
+
+.button {
+  display: inline-block;
+  padding: 14px 18px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border-top: 1px solid #ff0046;
+  border-left: 1px solid #ff0046;
+  border-right: 1px solid #de003d;
+  border-bottom: 1px solid #de003d;
+  background: #ff0046;
+  color: #fff !important;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1em;
+  -webkit-transition: all .125s;
+  -moz-transition: all .125s, ;
+  transition: all .125s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #d4003a;
+  border: 1px solid #d4003a;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button.small {
+  padding: 7px 15px;
+  font-size: 12px;
+}
+
+.button.medium { /* default button size */
+  padding: 16px 20px; 
+  font-size: 14px;
+}
+
+.button.large {
+  padding: 30px 20px; 
+  font-size: 16px;
+}
+
+.alternate { 
+  background: #00d181; 
+  border-top: 1px solid #00d181;
+  border-left: 1px solid #00d181;
+  border-right: 1px solid #00b670;
+  border-bottom: 1px solid #00b670;
+}
+
+.alternate:hover { 
+  background: #00b670; 
+  border: 1px solid #00b670;
+}
+
+.secondary { 
+  background: #128deb; 
+  border-top: 1px solid #128deb;
+  border-left: 1px solid #128deb;
+  border-right: 1px solid #107bcd;
+  border-bottom: 1px solid #107bcd;
+}
+
+.secondary:hover { 
+  background: #0e6ab1; 
+  border: 1px solid #0e6ab1;
+}
+
+.blue{
+  background: #206db3; 
+  border-top: 1px solid #206db3;
+  border-left: 1px solid #206db3;
+  border-right: 1px solid #126db3;
+  border-bottom: 1px solid #126db3;
+}
+.blue:hover { 
+  background: #195183; 
+  border: 1px solid #195183;
+}
+

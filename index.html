@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta http-equiv="Content-Type" Content="text/html; charset=utf-8" />
+  <link href="./favicon.ico" type="image/x-icon" rel=icon>
+  <link href="./favicon.ico" type="image/x-icon" rel="shortcut icon">
+  <title>Salo - Code Console</title>
+  <link href="./css/main.css" rel="stylesheet">
+  <script src="./lib/prettify.js"></script>
+</head>
+<body onload="prettyPrint()">
+  <div class="header">
+    <div class="topbar">
+      <div class="container">
+        <a href="javascript:;" class="logo">Salo</a>
+      </div>
+    </div>
+    <div class="navbar">
+      <div class="container clearfix">
+        <a href="/" class="active">Code Console</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <br>
+    <section>
+      <span>File：</span>
+      <input id="file" type="text" value="./src/loadScript.js"/>
+      <a id="load" class="button secondary small" href="javascript:;">Load</a>
+      <a id="edit" class="button alternate small" href="javascript:;">Edit</a>
+      <a id="apply" class="button small" href="javascript:;">Apply</a>
+    </section>
+    <br>
+    <section class="css3-flash"><em class="css3-flash-vertical"></em>
+      <pre id="pre" class="prettyprint linenums">
+baidu.frontia.social.setLoginCallback({
+    success: function(result) {
+    }
+    error: function(error) {
+    }
+});
+var options = {
+    response_type: 'token',
+    media_type: 'baidu',
+    redirect_uri: redirect_uri,
+    client_type: 'web'
+}
+ 
+baidu.frontia.social.login(options);
+      </pre>
+    </section>
+  </div>
+  <div class="footer">
+    <p>© 2014 SaloVance | <a target="_blank" href="https://github.com/SaloVance/salo">Github</a></p>
+  </div>
+  
+  <script src="./src/loadScript.js"></script>
+  <script>
+    Salo.loadScript('src/loadFile.js');
+    Salo.loadScript('src/dom.class.js');
+    Salo.loadScript('src/dom.style.js');
+    
+    var $ = function(id){
+      return document.getElementById(id);
+    };
+    
+    var curFileName, curFileStr,
+        $pre = $('pre');
+    $('load').onclick = function(){
+      curFileName = $('file').value;
+      curFileStr = $pre.innerHTML = '';
+      curFileName && Salo.loadFile(curFileName, function(resp){
+        console & console.log(curFileName + ' loaded!');
+        $pre.appendChild(document.createTextNode(curFileStr = resp));
+        /* re-pretty code */
+        Salo.dom.removeClass($pre, 'prettyprinted');
+        prettyPrint && prettyPrint(); 
+      });
+    };
+    
+    /* file prcess */
+    function exec(type, cmd){
+      switch (type){
+        case 'js':
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.text = cmd;
+          document.body.appendChild(script);
+          document.body.removeChild(script);
+          break;
+        case 'css':
+          Salo.dom.addStyle(cmd);
+          break;
+        case 'html':
+          var w = window.open('about:blank');
+          w.document.write(cmd);
+          setTimeout(function(){
+            var evt = w.document.createEvent('Event');  
+            evt.initEvent('load', true, true);  
+            w.dispatchEvent(evt);
+          }, 400);
+          break;
+      }
+    }
+    $('apply').onclick = function(){
+      if(!curFileName || !curFileStr) return;
+      var type;
+      try{
+        type = curFileName.match(/\.(js|html|css)$/)[1];
+      }catch(e){}
+      if(type){
+        Salo.dom.addClass($pre.parentNode, 'active');
+        setTimeout(function(){
+          Salo.dom.removeClass($pre.parentNode, 'active');
+          exec(type, curFileStr);
+        }, 1500);  
+      }
+    };
+    
+    var editable = false;
+    $('edit').onclick = function(){
+      $pre.contentEditable && ($pre.contentEditable = editable = !editable);
+    }
+  </script>
+</body>
+</html>

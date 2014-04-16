@@ -1,0 +1,13 @@
+input[type="text"]{
+  color: #666;
+  border: solid 1px #999;
+  -webkit-box-shadow: 1px 1px 3px #ddd inset;
+  -moz-box-shadow: 1px 1px 3px #ddd inset;
+  box-shadow: 1px 1px 3px #ddd inset;
+  background: none;
+  padding: 5px;
+  height: 16px;
+  vertical-align: top;
+  cursor: text;
+  width: 350px;
+}

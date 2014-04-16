@@ -1,0 +1,18 @@
+/* utils */
+.left{float: left;}
+.right{float: right;}
+.hide{display: none;}
+.clearfix{
+  display: block;
+  zoom: 1;
+}
+.clearfix:after{
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.yahei{
+  font-family: "Microsoft YaHei", "微软雅黑";
+}

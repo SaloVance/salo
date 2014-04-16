@@ -1,0 +1,24 @@
+{
+  "name": "Salo",
+  "description": "Fundamental js lib",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SaloVance/salo.git"
+  },
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-lib-contrib": "0.6.x",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-concat": "0.3.0",
+    "grunt-contrib-uglify": "0.2.5",
+    "grunt-contrib-watch": "0.5.3",
+    "grunt-php": "0.3.2",
+    "grunt-devserver": "0.3.0",
+    "grunt-concurrent": "0.4.x",
+    "grunt-check-modules": "*",
+    "grunt-install-dependencies": "~0.2.0"
+  },
+  "readme": "# Fundamental js lib"
+}
