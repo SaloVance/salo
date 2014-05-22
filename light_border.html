@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>light border</title>
+    <link type="text/css" href="css/css3.light_border.css" rel="stylesheet" />
+    
+   
+    <style type="text/css">
+  body{
+    text-align: center;
+    padding-top: 200px;
+    padding-left: 200px;
+    background: blue;
+  }
+
+  .box{
+    position: relative;
+    width:300px;
+    height:300px;
+  }
+  
+  .box-small{
+    position: relative;
+    width:150px;
+    height:150px;
+    margin: 0 auto;
+  }
+  
+  .light-v{
+    position: absolute;
+    height: 10%;
+    width: 20px;
+    opacity: 0;
+    left: -10px;
+    border-radius: 5px;
+  }
+  .light-vr{
+    left: auto;
+    right: -10px;
+  }
+  .light-vu{
+    bottom: -10%;
+    background: url(img/light-vu.png?x=2) no-repeat top center;
+     -webkit-animation: light-vu 2s 1s 1 linear; 
+  }
+  .light-vd{
+    top: -10%;
+    background: url(img/light-vd.png) no-repeat bottom center;
+     -webkit-animation: light-vd 2s 1s 1 linear; 
+  }
+  
+  .light-h{
+    position: absolute;
+    width: 10%;
+    height: 20px;
+    opacity: 0;
+    top: -10px;
+    border-radius: 5px;
+  }
+  .light-hb{
+    top: auto;
+    bottom: -10px;
+  }
+  .light-hr{
+    left: -10%;
+    background: url(img/light-hr.png) no-repeat center right;
+     -webkit-animation: light-hr 2s 1s 1 linear; 
+  }
+  .light-hl{
+    right: -10%;
+    background: url(img/light-hl.png) no-repeat center left;
+    -webkit-animation: light-hl 2s 1s 1 linear;
+  }
+  
+  .outer{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 2px solid rgba(255,255,255,0.5);
+      -webkit-transform: rotateX(42deg)  rotateY(42deg) perspective(182px);   
+  }
+
+  
+    </style>
+</head>
+<body>
+
+      <div class="outer">
+         <!-- 横向 上边 向右  -->
+        <div class="light-h light-hr"></div>
+         <!-- 横向 下边 向左  -->
+        <div class="light-h light-hl light-hb "></div>
+         <!-- 纵向 左边 向上  -->
+        <div class="light-v light-vu"></div>
+         <!-- 纵向 右边 向下  -->
+        <div class="light-v light-vd light-vr"></div>
+      </div>
+  
+</body>
+</html>
