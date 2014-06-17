@@ -57,10 +57,10 @@
   z-index: 999;
 }
 .css3-flash.active em.css3-flash-vertical {
-  transition: all 1.5s ease 0s;
-  -moz-transition: all 1.5s ease 0s;
-  -o-transition: all 1.5s ease 0s;
-  -webkit-transition: all 1.5s ease 0s;
+  transition: all 1.5s linear 0s;
+  -moz-transition: all 1.5s linear 0s;
+  -o-transition: all 1.5s linear 0s;
+  -webkit-transition: all 1.5s linear 0s;
   
   top: 100%;
 }
